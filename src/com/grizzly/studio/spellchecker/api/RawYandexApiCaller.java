@@ -20,8 +20,7 @@ public class RawYandexApiCaller implements RawApiCaller {
     public JSONArray call(Map<String, String> parameters, int options) {
         JSONArray json = null;
         try {
-            String answer = getRequest(parameters, options);
-            json = new JSONArray(answer);
+            json = new JSONArray(getRequest(parameters, options));
         } catch (Exception e) {
             System.err.println(e.toString());
         }

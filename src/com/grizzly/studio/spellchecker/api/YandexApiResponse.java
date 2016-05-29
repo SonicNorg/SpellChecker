@@ -10,7 +10,7 @@ public class YandexApiResponse implements ApiResponse {
     final String word;
     final int errorCode;
     final String errorMessage;
-    private List<String> dictionary = new ArrayList<>();
+    private final List<String> dictionary = new ArrayList<>();
 
     public YandexApiResponse(String word, int errorCode) {
         this.word = word;

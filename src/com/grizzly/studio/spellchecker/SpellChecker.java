@@ -8,26 +8,27 @@ import java.util.*;
  * Created by Norg on 27.05.2016.
  */
 public class SpellChecker {
-    ResponseApiCaller caller = new YandexResponseApiCaller(new RawYandexApiCaller());
-    String text;
-    int options = 0;
-    Set<ApiResponse> results = new HashSet<>();
-    Map<String, List<String>> result;
+    private final ResponseApiCaller caller = new YandexResponseApiCaller(new RawYandexApiCaller());
+    private final String text;
+    private final int options;
+    private final Set<ApiResponse> results;
 
     public SpellChecker(String text, int options) {
         this.text = text;
         this.options = options;
+        results = check();
     }
 
     public SpellChecker(String text) {
         this.text = text;
-        check();
+        this.options = 0;
+        results = check();
     }
 
-    private void check() {
+    private Set<ApiResponse> check() {
         Map<String, String> param = new HashMap<>();
         param.put("text", text);
-        results = caller.getResponse(param, options);
+        return caller.getResponse(param, options);
     }
 
     public Set<ApiResponse> mistakes() {
