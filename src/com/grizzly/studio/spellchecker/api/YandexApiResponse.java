@@ -17,10 +17,10 @@ public class YandexApiResponse implements ApiResponse {
         this.errorCode = errorCode;
         switch (errorCode) {
             case 1:
-                this.errorMessage = "Слова нет в словаре";
+                this.errorMessage = "Нет в словаре";
                 break;
             case 2:
-                this.errorMessage = "Повтор слова";
+                this.errorMessage = "Повтор";
                 break;
             case 3:
                 this.errorMessage = "Неверное употребление прописных и строчных букв";
@@ -29,7 +29,7 @@ public class YandexApiResponse implements ApiResponse {
                 this.errorMessage = "Текст содержит слишком много ошибок";
                 break;
             default:
-                this.errorMessage = "Ошибка в слове";
+                this.errorMessage = "Ошибка";
         }
     }
     
@@ -49,12 +49,12 @@ public class YandexApiResponse implements ApiResponse {
         result.append(": ");
         result.append(word);
         if (dictionary().size() > 0) {
-            result.append(";");
+            result.append("; ");
             for (String s : dictionary) {
-                result.append(" ");
                 result.append(s);
+                result.append(" ");
             }
         }
-        return result.toString();
+        return result.toString().trim();
     }
 }
