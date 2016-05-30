@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class TestMain {
     public static void main(String[] args) {
-        SpellChecker checker = new SpellChecker("Съеж ещё этиъ булок да выпй чая");
+        SpellChecker checker = new SpellChecker("отакуе");
         Set<ApiResponse> res = checker.mistakes();
         System.out.println(res);
     }

@@ -1,6 +1,7 @@
 package com.grizzly.studio.spellchecker.api;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -50,9 +51,11 @@ public class YandexApiResponse implements ApiResponse {
         result.append(word);
         if (dictionary().size() > 0) {
             result.append("; ");
-            for (String s : dictionary) {
-                result.append(s);
-                result.append(" ");
+            Iterator iter = dictionary.iterator();
+            while (iter.hasNext()) {
+                result.append(iter.next());
+                if (iter.hasNext())
+                    result.append(", ");
             }
         }
         return result.toString().trim();

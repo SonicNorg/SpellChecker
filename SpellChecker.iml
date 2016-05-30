@@ -7,7 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="org.json:json:20160212" level="application" />
     <orderEntry type="library" name="org.apache.commons:commons-lang3:3.3.2" level="application" />
+    <orderEntry type="library" name="org.json:json:Latest" level="project" />
+    <orderEntry type="library" name="org.apache.directory.studio:org.apache.commons.lang:Latest" level="project" />
   </component>
 </module>
